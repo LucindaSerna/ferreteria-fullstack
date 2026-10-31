@@ -97,12 +97,12 @@ def crear_compra(solicitud: SolicitudCompra):
 # --------------------------------------------------
 
 @app.get("/recomendaciones/{sku}")
-def obtener_recomendaciones(sku: str, limite: int = 5):
+def obtener_recomendaciones(sku: str, limite: int = 3):
 
-    if not 1 <= limite <= 28:
+    if not 1 <= limite <= 3:
         raise HTTPException(
             status_code=422,
-            detail="El límite debe estar entre 1 y 28"
+            detail="El límite debe estar entre 1 y 3"
         )
 
     with conectar() as conexion:

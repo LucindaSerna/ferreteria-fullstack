@@ -41,7 +41,7 @@ useEffect(() => {
   setCargandoRecomendaciones(true)
   setErrorRecomendaciones('')
 
-  fetch(`http://127.0.0.1:8000/recomendaciones/${primerSku}?limite=28`)
+  fetch(`http://127.0.0.1:8000/recomendaciones/${primerSku}?limite=3`)
     .then((respuesta) => {
       if (!respuesta.ok) {
         throw new Error('No se pudieron consultar las recomendaciones')
