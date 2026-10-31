@@ -210,7 +210,7 @@ python -m venv .venv
 Instalar las dependencias:
 
 ```bash
-python -m pip install fastapi "uvicorn[standard]"
+python -m pip install -r requirements.txt
 ```
 
 ### Paso 3. Inicializar la base de datos
