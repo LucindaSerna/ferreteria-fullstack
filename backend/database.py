@@ -61,6 +61,18 @@ def crear_tablas():
                     REFERENCES productos(sku)
             )
         """)
+        conexion.execute("""
+            CREATE TABLE IF NOT EXISTS relaciones_manual (
+                sku_origen TEXT NOT NULL,
+                sku_recomendado TEXT NOT NULL,
+                puntuacion REAL NOT NULL
+                    CHECK (puntuacion >= 0 AND puntuacion <= 1),
+                PRIMARY KEY (sku_origen, sku_recomendado),
+                FOREIGN KEY (sku_origen) REFERENCES productos(sku),
+                FOREIGN KEY (sku_recomendado) REFERENCES productos(sku),
+                CHECK (sku_origen <> sku_recomendado)
+            )
+        """)
 
         conexion.commit()
 
