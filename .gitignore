@@ -1,0 +1,30 @@
+# Base de datos local de pruebas
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Copias de seguridad
+*backup*.py
+
+# Configuraciones privadas
+.env
+.env.*
+!.env.example
+
+# Dependencias y archivos temporales
+node_modules/
+.venv/
+venv/
+dist/
+
+# Carpeta original y archivos auxiliares
+/Prueba tecnica/
+/__MACOSX/
+.DS_Store
+~$*
